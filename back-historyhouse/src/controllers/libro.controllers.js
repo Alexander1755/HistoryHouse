@@ -8,6 +8,7 @@ export const getLibros = async (req, res) => {
 
 export const getDescripcion = async (req, res) => {
     const { id_libro } = req.params;
+    console.log('id_libro:', id_libro); // Verifica el valor de id_libro
     const { rows } = await pool.query('SELECT sinopsis_libro,objetivos_libro FROM libro WHERE id_libro = $1', [id_libro])
     
     if (rows.length === 0){

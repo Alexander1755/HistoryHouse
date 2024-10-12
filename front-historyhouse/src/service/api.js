@@ -11,3 +11,4 @@ const api = axios.create({
 
 
 export const getBooks = () => api.get('/libros/librote')
+export const getDescripcion = (bookId) => api.get(`/libros/libros/descripcion/${bookId}`);  // Interpolando bookId en la URL

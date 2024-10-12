@@ -34,7 +34,7 @@ const Home = () => {
           <Grid item xs={12} sm={6} md={4} key={book.id_libro}>
             <div style={{ textAlign: 'center' }}>
               {/* Cambiar la URL a /Libro/:id al hacer clic */}
-              <Link to={`/Libro`}>
+              <Link to={`/Libro/${book.id_libro}`}>
                 <img
                   className="img"
                   src={book.portada_libro}
