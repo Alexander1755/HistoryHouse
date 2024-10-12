@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react";
 import { getBooks } from "../service/api";
+import React from 'react';
+import Grid from '@mui/material/Grid';
 
 const Home = () => {
 
@@ -25,17 +27,28 @@ const Home = () => {
 
   return (
     <div>
-        
-
-        <Link className='menu-link' to="/Libro"><h1>ir  a los detalles</h1></Link>
-        {
-          books.map((ale) => (
-            <div key = {ale.id_libro}>
-            <img className="img" src={ale.portada_libro} height={'200px'} width={'150px'}></img>
-              {ale.titulo_libro}
+      <h1>Selecciona un libro</h1>
+      
+      <Grid container spacing={2}>
+        {books.map((book) => (
+          <Grid item xs={12} sm={6} md={4} key={book.id_libro}>
+            <div style={{ textAlign: 'center' }}>
+              {/* Cambiar la URL a /Libro/:id al hacer clic */}
+              <Link to={`/Libro`}>
+                <img
+                  className="img"
+                  src={book.portada_libro}
+                  alt={book.titulo_libro}
+                  height={'400px'}
+                  width={'300px'}
+                  style={{ cursor: 'pointer', display: 'block', margin: '0 auto' }}
+                />
+              </Link>
+              <p>{book.titulo_libro}</p>
             </div>
-          ))
-        }
+          </Grid>
+        ))}
+      </Grid>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { getLibros, getDescripcion, getDetalles } from "../controllers/libro.con
 const router = Router();
 
 // Ruta para obtener la lista de libros
-router.get('/libros', getLibros);
+router.get('/librote', getLibros);
 
 // Ruta para obtener la descripción de un libro por ID
 router.get('/libros/descripcion/:id_libro', getDescripcion);

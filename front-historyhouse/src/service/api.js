@@ -10,4 +10,4 @@ const api = axios.create({
 });
 
 
-export const getBooks = () => api.get('/libros/libros')
+export const getBooks = () => api.get('/libros/librote')
